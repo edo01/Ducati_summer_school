@@ -14,6 +14,33 @@ import pygraph.pyig as ig
 black = "#000000"
 
 
+class Timer:
+    def __init__(self):
+        self._init_time = time.time()
+        self._do_not_count = 0
+        self._start_c = 0
+        self.pause = False
+
+    def set_init_time(self):
+        self.pause = False
+        self._do_not_count = 0
+        self._init_time = time.time()
+
+    def stop(self):
+        self._start_c = time.time()
+        self.pause = True
+
+    def restart(self):
+        self._do_not_count += time.time() - self._start_c
+        self.pause = False
+
+    def get_time_passed(self):
+        if self.pause:
+            return self._start_c - self._init_time - self._do_not_count
+        else:
+            return time.time() - self._init_time - self._do_not_count
+
+
 class Model:
     def __init__(self, ray, distance, w, translation_velocity):
 
@@ -48,8 +75,8 @@ class Model:
 
     # 4
     def angle_traveled(self, time_passed=0.0):
-        print("velocity:", self.w*self.ray/self.ray_at(time_passed), "; angle done:",
-              Model.to_degree((self.w*self.ray/self.ray_at(time_passed))*time_passed), " after:", time_passed)
+        # print("velocity:", self.w*self.ray/self.ray_at(time_passed), "; angle done:",
+        #      Model.to_degree((self.w*self.ray/self.ray_at(time_passed))*time_passed), " after:", time_passed)
         return (self.w*self.ray/self.ray_at(time_passed))*time_passed
 
     # 5
@@ -78,21 +105,18 @@ class Control:
 
     def __init__(self, model):
         self._model = model
-        self._init_time = time.time()
         self._view = View(self._model.ray, self._model.distance)
+        self._timer = Timer()
         self._view.show(self)
 
-    def get_time_passed_from_the_beginning(self):
-        return time.time() - self._init_time
-
-    def update(self, args):
-        self._init_time = time.time()
-        current_time = self.get_time_passed_from_the_beginning()
-        while self._model.ray - self._model.ray_at(self.get_time_passed_from_the_beginning()) < self._model.distance:
+    def update(self, event):
+        self._timer.set_init_time()
+        current_time = self._timer.get_time_passed()
+        while self._model.ray - self._model.ray_at(current_time) < self._model.distance:
             # update the parameters of the visual
-            self._view.set_parameters(current_time, self._model.w_at(current_time),
-                                      self._model.angle_at(current_time),
-                                      self._model.w_bend_at(current_time), self._model.ray_at(current_time))
+            self._view.update_parameters(current_time, self._model.w_at(current_time),
+                                         self._model.angle_at(current_time),
+                                         self._model.w_bend_at(current_time), self._model.ray_at(current_time))
             # angle traveled by the carousel
             angle = Model.to_degree(self._model.angle_traveled(current_time))
             # angle of bend
@@ -120,11 +144,11 @@ class Control:
             self._view.update(new_ray=self._model.ray_at(current_time),
                               which=which, rotation_point_x=x, rotation_point_y=y, biker_rotation_point_x=x_biker,
                               biker_rotation_point_y=y_biker)
-            current_time = self.get_time_passed_from_the_beginning()
+            current_time = self._timer.get_time_passed()
 
         # update the parameters with 90° bend
-        self._view.set_parameters(current_time, self._model.w_at(current_time),
-                                  90, self._model.maximum_w_bend(), self._model.minimum_ray())
+        self._view.update_parameters(current_time, self._model.w_at(current_time),
+                                     90, self._model.maximum_w_bend(), self._model.minimum_ray())
         # angle traveled by the carousel
         angle = Model.to_degree(self._model.maximum_angle_traveled())
         # angle of bend
@@ -149,6 +173,12 @@ class Control:
         self._view.update(new_ray=self._model.minimum_ray(),
                           which=which, rotation_point_x=x, rotation_point_y=y, biker_rotation_point_x=x_biker,
                           biker_rotation_point_y=y_biker)
+
+    def timer_event(self, event):
+        if self._timer.pause:
+            self._timer.restart()
+        else:
+            self._timer.stop()
 
 
 class View:
@@ -198,7 +228,11 @@ class View:
                                        width=10, color="red")
         self._angle_side = ig.Segment(self._center_circle_biker, self._bike_barycenter_biker, color="red")
 
-    def set_parameters(self, time_passed, w, angle, w_bend, ray):
+    def update_parameters(self, time_passed, w, angle, w_bend, ray):
+
+        ############
+        # carousel #
+        ############
         self._timer.visible = False
         self._timer = ig.Text(-1.5, 1.3, "time passed:"+str(time_passed), color=black, width=15, iplane=self._ip)
         self._w_text.visible = False
@@ -264,6 +298,8 @@ class View:
 
     def show(self, ctrl):
         self._ip.onkeypress(ctrl.update)
+        self._ip.onpress3(ctrl.timer_event)
+        self._ip_biker.onpress3(ctrl.timer_event)
         self._ip_biker.onkeypress(ctrl.update)
         self._ip.mainloop()
 
