@@ -8,7 +8,9 @@ scientifiche l’opportunità di vivere un’esperienza di approfondimento teori
 motocicletta.<br>
 L'obiettivo del progetto è lo studio della variazione della velocità angolare di una motocicletta che si piega in curva. Lo studio
 è stato realizzato attraverso l'utilizzo di una giostra rotante libera di avvicinarsi ed allontanarsi dal suo asse di rotazione.<br>
-clicca [qui](https://github.com/edo01/Ducati_summer_school/blob/master/media/giostra.mp4) per scaricare il video della giostra e capire il suo funzionamento.
+
+Clicca [qui](https://github.com/edo01/Ducati_summer_school/blob/master/media/giostra.mp4) per scaricare il video della giostra e capire il suo funzionamento.
+
 <br>
 La repository contiene il modello fisico del sistema sviluppato in insight maker, il diario di bordo con le considerazioni teoriche
 e pratiche sviluppate nel corso del progetto, una simulazione grafica Python dell'esperimento ed
@@ -27,13 +29,11 @@ e successivamente scaricare la libreria [pygraph](https://bitbucket.org/zambu/py
 ```console
 foo@bar:~$ cd la/tua/directory/Ducati_summer_school/
 ```
-<br>
-Poi nel caso foste su Linux:<br>
+Poi nel caso foste su Linux:
 ```console
 foo@bar:~$ python2.7 simulation.py
 ```
-<br>
-oppure su Windows:<br>
+oppure su Windows:
 ```console
 foo@bar:~$ py -2 simulation.py
 ```
