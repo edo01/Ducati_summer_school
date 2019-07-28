@@ -14,9 +14,9 @@ La repository contiene il modello fisico del sistema sviluppato in insight maker
 e pratiche sviluppate nel corso del progetto, una simulazione grafica Python dell'esperimento ed
 infine il link della presentazione prodotta con Prezi.
 <br>
-
-##Simulazione
-
+<div align="center">
+  <h3>Simulazione</h3>
+</div><br>
 La simulazione, scritta in Python, è composta da due schermate: 
 - La prima contiene la giostra vista dall'alto mentre ruota e trasla verso l'asse di rotazione. Questa schermata replica esattamente quello che è stato l'esperimento svolto, riportando le misure reali del sistema.<br>
 - La seconda contiene invece il risultato della ricerca. La schermata rappresenta una moto vista di fronte che piega in base alla posizione traslatoria della giostra nella prima schermata.<br>
@@ -28,12 +28,12 @@ e successivamente scaricare la libreria [pygraph](https://bitbucket.org/zambu/py
 foo@bar:~$ cd la/tua/directory/Ducati_summer_school/
 ```
 <br>
-Poi nel caso foste su Linux:
+Poi nel caso foste su Linux:<br>
 ```console
 foo@bar:~$ python2.7 simulation.py
 ```
 <br>
-oppure su Windows:
+oppure su Windows:<br>
 ```console
 foo@bar:~$ py -2 simulation.py
 ```
