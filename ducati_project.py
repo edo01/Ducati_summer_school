@@ -227,6 +227,7 @@ class View:
         self._angle_of_bend = ig.Angle(self._start_bend, self._center_circle_biker, self._bike_barycenter_biker,
                                        width=10, color="red")
         self._angle_side = ig.Segment(self._center_circle_biker, self._bike_barycenter_biker, color="red")
+        self._angle_label = ig.Label(self._angle_of_bend, -30.1, 30.2, self._angle_of_bend.extent(), color="black")
 
     def update_parameters(self, time_passed, w, angle, w_bend, ray):
 
@@ -283,6 +284,7 @@ class View:
         self._counterweight_barycenter.visible = False
         self._counterweight_barycenter.name = ""
         self._link_axis.visible = False
+        self._angle_label.visible = False
 
         self._ray_curve = ig.Point(new_ray, 0, visible=False, iplane=self._ip)
         self._rotation_point = ig.Point(rotation_point_x, rotation_point_y, visible=False, iplane=self._ip)
@@ -294,6 +296,8 @@ class View:
                                                          width=10, name='baricentro contrappeso')
 
         self._link_axis = ig.Segment(self._bike_barycenter, self._counterweight_barycenter, color=black)
+        print(self._angle_of_bend.extent())
+        self._angle_label = ig.Label(self._angle_of_bend, -30.1, 30.2, self._angle_of_bend.extent(), color="black")
         self._ip.getcanvas().update()
 
     def show(self, ctrl):
