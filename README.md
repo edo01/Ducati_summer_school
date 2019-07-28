@@ -16,13 +16,13 @@ Il progetto contiene:<br>
 
 - Il [modello fisico del sistema](https://insightmaker.com/insight/171328/Untitled-Insight) sviluppato con insight maker;<br>
 - Il [diario di bordo](https://github.com/edo01/Ducati_summer_school/blob/master/doc/diario.docx) con le considerazioni teoriche e pratiche sviluppate nel corso del progetto;<br>
-- Una [simulazione](https://github.com/edo01/Ducati_summer_school/blob/master/ducati_project.py) grafica Python dell'esperimento ;<br>
+- Una [simulazione](https://github.com/edo01/Ducati_summer_school/blob/master/simulation.py) grafica Python dell'esperimento ;<br>
 - Link della [presentazione](https://prezi.com/view/ZW1Ap2TJd28MOM3E7g7p) prodotta con Prezi.<br>
 <br>
 <div align="center">
   <h3>Simulazione</h3>
 </div><br>
-La simulazione, scritta in Python, è composta da due schermate: 
+La simulazione, scritta in Python, è composta da due schermate:
 - La prima contiene la giostra vista dall'alto mentre ruota e trasla verso l'asse di rotazione. Questa schermata replica esattamente quello che è stato l'esperimento svolto, riportando le misure reali del sistema.<br>
 - La seconda contiene invece il risultato della ricerca. La schermata rappresenta una moto vista di fronte che piega in base alla posizione traslatoria della giostra nella prima schermata.<br>
 
@@ -50,5 +50,5 @@ Team di ricerca:<br>
   -Alexandru Burlacu<br>
   -Edoardo Carrà<br>
   -Leonardo Zecchinelli<br>
-  
+
 Il progetto è stato svolto in collaborazione con il laboratorio di [Fisica in Moto](https://www.ducati.com/it/it/fisica-in-moto) presso lo stabilimento Ducati, Bologna. La Summer School Fisica in Moto rientra tra le attività del Programma Nazionale per la Valorizzazione delle Eccellenze del Ministero per l’Istruzione, l’Università e la Ricerca.
