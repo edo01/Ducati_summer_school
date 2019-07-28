@@ -51,4 +51,4 @@ Team di ricerca:<br>
   -Edoardo Carrà<br>
   -Leonardo Zecchinelli<br>
   
-Il progetto è stato svolto in collaborazione con il laboratorio di [Fisica in Moto](https://www.ducati.com/it/it/fisica-in-moto) presso lo stabilimento Ducati,Bologna. La Summer School Fisica in Moto rientra tra le attività del Programma Nazionale per la Valorizzazione delle Eccellenze del Ministero per l’Istruzione, l’Università e la Ricerca.
+Il progetto è stato svolto in collaborazione con il laboratorio di [Fisica in Moto](https://www.ducati.com/it/it/fisica-in-moto) presso lo stabilimento Ducati, Bologna. La Summer School Fisica in Moto rientra tra le attività del Programma Nazionale per la Valorizzazione delle Eccellenze del Ministero per l’Istruzione, l’Università e la Ricerca.
