@@ -72,7 +72,7 @@ class Timer:
 
 
 class Model:
-    """Model of the project(see the CHE COSAAAgfdstrwaaegsdtgrdtrthrytrteertytreretryrtrrtrytrrertyrfhf)"""
+    """Model of the project(see doc/diario)"""
 
     def __init__(self, ray, distance, w, translation_velocity):
         """
