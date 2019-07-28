@@ -13,6 +13,7 @@ Clicca [qui](https://github.com/edo01/Ducati_summer_school/blob/master/media/gio
 
 <br>
 Il progetto contiene:<br>
+
 - Il [modello fisico del sistema](https://insightmaker.com/insight/171328/Untitled-Insight) sviluppato con insight maker;<br>
 - Il [diario di bordo](https://github.com/edo01/Ducati_summer_school/blob/master/doc/diario.docx) con le considerazioni teoriche e pratiche sviluppate nel corso del progetto;<br>
 - Una [simulazione](https://github.com/edo01/Ducati_summer_school/blob/master/ducati_project.py) grafica Python dell'esperimento ;<br>
@@ -42,10 +43,12 @@ foo@bar:~$ py -2 simulation.py
 <div align="center">
   <h3>Credits</h3>
 </div>
-Team di ricerca:
+Team di ricerca:<br>
+
   -Lorenzo Calandra Buonaura<br>
   -Fabiola Borsci<br>
   -Alexandru Burlacu<br>
   -Edoardo Carrà<br>
   -Leonardo Zecchinelli<br>
+  
 Il progetto è stato svolto in collaborazione con il laboratorio di [Fisica in Moto](https://www.ducati.com/it/it/fisica-in-moto) presso lo stabilimento Ducati,Bologna. La Summer School Fisica in Moto rientra tra le attività del Programma Nazionale per la Valorizzazione delle Eccellenze del Ministero per l’Istruzione, l’Università e la Ricerca.
