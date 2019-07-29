@@ -15,7 +15,7 @@ Clicca [qui](https://github.com/edo01/Ducati_summer_school/blob/master/media/gio
 Il progetto contiene:<br>
 
 - Il [modello fisico del sistema](https://insightmaker.com/insight/171328/Untitled-Insight) sviluppato con insight maker;<br>
-- Il [diario di bordo](https://github.com/edo01/Ducati_summer_school/blob/master/doc/diario.docx) con le considerazioni teoriche e pratiche sviluppate nel corso del progetto;<br>
+- Il [diario di bordo](https://github.com/edo01/Ducati_summer_school/blob/master/doc/diario.pdf) con le considerazioni teoriche e pratiche sviluppate nel corso del progetto;<br>
 - Una [simulazione](https://github.com/edo01/Ducati_summer_school/blob/master/simulation.py) grafica Python dell'esperimento ;<br>
 - Link della [presentazione](https://prezi.com/view/ZW1Ap2TJd28MOM3E7g7p) prodotta con Prezi.<br>
 <br>
